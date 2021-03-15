@@ -1,6 +1,4 @@
-<h1 align="center">
-  <img alt="ignite-reactjs" title="ignite-reactjs" src=".github/cover-reactjs.png">
-</h1>
+<img alt="ignite-reactjs" title="ignite-reactjs" src=".github/cover-reactjs.png">
 
 <h1 align="center">
   Desafios Ignite
@@ -8,4 +6,4 @@
 
 ## Índice de desafios
 
-- [Desafio 01 - Conceitos do React](https://github.com/FelipeBrenner/ignite-reactjs-desafios/desafio-01-conceitos-do-react)
+- [Desafio 01 - Conceitos do React](https://github.com/FelipeBrenner/ignite-reactjs-desafios/tree/main/desafio-01-conceitos-do-react)
