@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="ignite-reactjs" title="ignite-reactjs" src="..github/cover-reactjs.png">
+  <img alt="ignite-reactjs" title="ignite-reactjs" src="../.github/cover-reactjs.png">
 </h1>
 
 # Desafio 01 - Conceitos do React
