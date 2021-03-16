@@ -6,5 +6,6 @@
 
 ## Índice de desafios
 
-- [Desafio 01 - Conceitos do React](https://github.com/FelipeBrenner/ignite-reactjs-desafios/tree/main/desafio-01-conceitos-do-react)
-- [Desafio 02 - Componentizando a aplicação](https://github.com/FelipeBrenner/ignite-reactjs-desafios/tree/main/desafio-02-componentizando-a-aplicacao)
+### Charpter I
+- [Desafio 01 - Conceitos do React](https://github.com/FelipeBrenner/ignite-reactjs-desafios/tree/main/charpter-I-desafio-01-conceitos-do-react)
+- [Desafio 02 - Componentizando a aplicação](https://github.com/FelipeBrenner/ignite-reactjs-desafios/tree/main/charpter-I-desafio-02-componentizando-a-aplicacao)
