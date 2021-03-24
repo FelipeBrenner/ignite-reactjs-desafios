@@ -40,7 +40,6 @@ const Home = (): JSX.Element => {
   }, []);
 
   function handleAddProduct(id: number) {
-    console.log(id);
     addProduct(id);
   }
 
