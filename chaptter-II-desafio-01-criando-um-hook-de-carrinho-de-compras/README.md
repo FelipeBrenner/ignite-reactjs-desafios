@@ -108,7 +108,7 @@ Com o template já clonado, as depêndencias instaladas e a [fake API rodando](h
 
 ### components/Header/index.tsx
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71a7f217-c1bb-426a-8fcc-dfb65db6bb7a/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71a7f217-c1bb-426a-8fcc-dfb65db6bb7a/Untitled.png)
+<img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F71a7f217-c1bb-426a-8fcc-dfb65db6bb7a%2FUntitled.png?table=block&id=acdec457-aedb-4c92-a020-ee3387283f85&width=2010&userId=c2f20f93-e6f2-4785-879d-55dde28c4d2e&cache=v2">
 
 Você deve receber o array `cart` do hook `useCart` e mostrar em tela a quantidade de produtos **distintos** adicionados ao carrinho. Dessa forma, se o carrinho possui 4 unidades do item A e 1 unidade do item B o valor a ser mostrado é `2 itens`.
 
