@@ -114,4 +114,4 @@ Esse desafio deve ser entregue a partir da plataforma da Rocketseat. Envie o lin
   - `yarn add @types/react-router-dom -D`
   - `yarn add @types/styled-components -D`
   - `yarn add @types/react-modal -D`
-- Alterado arquivos de `.js` e `.jsx` para `.ts` e `.tsx`.
+- Refatorado arquivos, alterando de `.js` e `.jsx` para `.ts` e `.tsx`, passando a utilizar useState() no lugar de this.state da extenção Component do React, useEffect(), function ao invés de class, declarando as tipagens nos index e styles com Props, etc.
