@@ -9,6 +9,8 @@
     "test": "jest --watchAll"
   },
   "dependencies": {
+    "hosted-git-info": "^4.0.2",
+    "postcss": "^8.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0"
