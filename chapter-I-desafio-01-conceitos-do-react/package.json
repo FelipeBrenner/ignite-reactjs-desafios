@@ -9,11 +9,14 @@
     "test": "jest --watchAll"
   },
   "dependencies": {
+    "browserlist": "^1.0.1",
+    "dns-packet": "^5.2.4",
     "hosted-git-info": "^4.0.2",
     "postcss": "^8.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-icons": "^4.2.0"
+    "react-icons": "^4.2.0",
+    "ws": "^7.4.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
