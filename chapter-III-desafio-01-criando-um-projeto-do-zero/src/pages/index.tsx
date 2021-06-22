@@ -34,13 +34,13 @@ interface HomeProps {
 export default function Home() {
   return (
     <>
-      <main className={`${commonStyles.container} ${styles.content}`}>
+      <main className={commonStyles.container}>
         <Header />
         <div className={styles.posts}>
           <Link href="/">
             <a>
-              <strong>Titulo</strong>
-              <p>Subtitulo e coisarada</p>
+              <strong>Como utilizar Hooks</strong>
+              <p>Pensando em sincronização em vez de ciclos de vida.</p>
               <div>
                 <time>
                   <FiCalendar />
@@ -55,8 +55,8 @@ export default function Home() {
           </Link>
           <Link href="/">
             <a className={styles.post}>
-              <strong>Titulo</strong>
-              <p>Subtitulo e coisarada</p>
+              <strong>Criando um app CRA do zero</strong>
+              <p>Tudo sobre como criar a sua primeira aplicação.</p>
               <div>
                 <time>
                   <FiCalendar />
@@ -69,6 +69,7 @@ export default function Home() {
               </div>
             </a>
           </Link>
+          <button type="button">Carregar mais posts</button>
         </div>
       </main>
     </>
@@ -84,6 +85,8 @@ export const getStaticProps: GetStaticProps = async () => {
       pageSize: 3,
     }
   );
+
+  console.log(postsResponse.results);
 
   return {
     props: {

@@ -9,8 +9,8 @@
     strong {
       display: block;
       font-size: 1.75rem;
+      line-height: 2.125rem;
       color: var(--heading);
-      line-height: 2.12rem;
       letter-spacing: -0.5px;
 
       transition: filter 0.2s;
@@ -23,6 +23,7 @@
     p {
       font-size: 1.125rem;
       line-height: 1.375rem;
+      margin-top: 0.5rem;
       color: var(--body);
     }
 
@@ -30,13 +31,14 @@
       display: flex;
 
       font-size: 0.875rem;
-      line-height: 1.0625rem;
+      margin-top: 1.5rem;
       color: var(--info);
 
       time,
       span {
         display: flex;
         align-items: center;
+        line-height: 1.0625rem;
 
         svg {
           height: 20px;
@@ -48,6 +50,23 @@
       time + span {
         margin-left: 25px;
       }
+    }
+  }
+
+  button {
+    background: transparent;
+    border: none;
+
+    color: var(--highlight);
+    margin-top: 4rem;
+    font-weight: 600;
+    font-size: 1.125;
+    line-height: 1.375rem;
+
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.8);
     }
   }
 }
