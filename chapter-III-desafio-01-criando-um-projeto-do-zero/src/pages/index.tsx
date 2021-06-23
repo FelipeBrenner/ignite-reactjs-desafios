@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 
 import { FiCalendar, FiUser } from 'react-icons/fi';
@@ -36,6 +37,8 @@ interface HomeProps {
 }
 
 export default function Home({ postsPagination }: HomeProps): JSX.Element {
+  const [nextPage, setNextPage] = useState<string>(postsPagination.next_page);
+
   const formattedPosts = postsPagination.results.map(post => {
     return {
       ...post,
@@ -51,8 +54,35 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
 
   const [posts, setPosts] = useState<Post[]>(formattedPosts);
 
+  async function handleLoadMorePosts(): Promise<void> {
+    const newPostsPagination = await fetch(nextPage).then(response =>
+      response.json()
+    );
+
+    setNextPage(newPostsPagination.next_page);
+
+    const newFormattedPosts = newPostsPagination.results.map(post => {
+      return {
+        ...post,
+        first_publication_date: format(
+          new Date(post.first_publication_date),
+          'dd MMM yyyy',
+          {
+            locale: ptBR,
+          }
+        ),
+      };
+    });
+
+    setPosts([...posts, ...newFormattedPosts]);
+  }
+
   return (
     <>
+      <Head>
+        <title>Home | spacetraveling</title>
+      </Head>
+
       <main className={commonStyles.container}>
         <Header />
         <div className={styles.posts}>
@@ -74,7 +104,11 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
               </a>
             </Link>
           ))}
-          <button type="button">Carregar mais posts</button>
+          {nextPage && (
+            <button type="button" onClick={handleLoadMorePosts}>
+              Carregar mais posts
+            </button>
+          )}
         </div>
       </main>
     </>
@@ -86,8 +120,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const postsResponse = await prismic.query(
     [Prismic.predicates.at('document.type', 'posts')],
     {
-      // fetch: ['posts.title', 'posts.subtitle', 'posts.author'],
-      pageSize: 3,
+      pageSize: 1,
     }
   );
 
