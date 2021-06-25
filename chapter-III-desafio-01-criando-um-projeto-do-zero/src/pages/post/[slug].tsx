@@ -9,6 +9,9 @@ import commonStyles from '../../styles/common.module.scss';
 import styles from './post.module.scss';
 
 import Header from '../../components/Header';
+import { RichText } from 'prismic-dom';
+
+import { formatDate } from '../../utils';
 
 interface Post {
   first_publication_date: string | null;
@@ -35,7 +38,7 @@ export default function Post({ post }: PostProps) {
   return (
     <>
       <Head>
-        <title>post.data.title | spacetraveling</title>
+        <title>{post.data.title} | spacetraveling</title>
       </Head>
 
       <Header />
@@ -43,60 +46,74 @@ export default function Post({ post }: PostProps) {
       <img src="/teste.png" alt="banner" className={styles.banner} />
       <main className={commonStyles.container}>
         <article className={styles.post}>
-          <h1>Criando um app CRA do zero</h1>
-          <div>
+          <h1>{post.data.title}</h1>
+          <div className={commonStyles.info}>
             <time>
               <FiCalendar />
-              15 Mar 2021
+              {formatDate(post.first_publication_date)}
             </time>
             <span>
               <FiUser />
-              Felipe Brenner
+              {post.data.author}
             </span>
             <time>
               <FiClock />4 min
             </time>
           </div>
-          <h2>Título seção</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa odio,
-            corrupti illum praesentium asperiores atque labore placeat sunt
-            rerum fugit voluptas qui. Odit velit optio reiciendis, laudantium
-            dicta perspiciatis ipsa ex iure fugit consequatur odio aspernatur
-            dolores magni dignissimos, atque expedita quo? Dolorum, voluptates
-            rerum eos dignissimos hic dolor voluptatem, facere at quia
-            laudantium est! Iure eos saepe esse sed, autem dolorum vero quia
-            commodi recusandae minima laudantium. Quisquam illum ullam vel
-            laudantium in commodi ex saepe corrupti aliquam non?
-          </p>
-          <h2>Título seção</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa odio,
-            corrupti illum praesentium asperiores atque labore placeat sunt
-            rerum fugit voluptas qui. Odit velit optio reiciendis, laudantium
-            dicta perspiciatis ipsa ex iure fugit consequatur odio aspernatur
-            dolores magni dignissimos, atque expedita quo? Dolorum, voluptates
-            rerum eos dignissimos hic dolor voluptatem, facere at quia
-            laudantium est! Iure eos saepe esse sed, autem dolorum vero quia
-            commodi recusandae minima laudantium. Quisquam illum ullam vel
-            laudantium in commodi ex saepe corrupti aliquam non?
-          </p>
+          {post.data.content.map(content => {
+            return (
+              <section key={content.heading} className={styles.postContent}>
+                <h2>{content.heading}</h2>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: RichText.asHtml(content.body),
+                  }}
+                ></div>
+              </section>
+            );
+          })}
         </article>
       </main>
     </>
   );
 }
 
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const prismic = getPrismicClient();
-//   const posts = await prismic.query(TODO);
+export const getStaticPaths: GetStaticPaths = async () => {
+  // const prismic = getPrismicClient();
+  // const posts = await prismic.query(TODO);
 
-//   // TODO
-// };
+  return {
+    paths: [],
+    fallback: true,
+  };
+};
 
-// export const getStaticProps: GetStaticProps = async context => {
-//   const prismic = getPrismicClient();
-//   const response = await prismic.getByUID(TODO);
+export const getStaticProps: GetStaticProps = async context => {
+  const prismic = getPrismicClient();
+  const { slug } = context.params;
+  const response = await prismic.getByUID('posts', String(slug), {});
 
-//   // TODO
-// };
+  const post = {
+    uid: response.uid,
+    first_publication_date: response.first_publication_date,
+    data: {
+      title: response.data.title,
+      banner: {
+        url: response.data.banner.url,
+      },
+      author: response.data.author,
+      content: response.data.content.map(content => {
+        return {
+          heading: content.heading,
+          body: [...content.body],
+        };
+      }),
+    },
+  };
+
+  return {
+    props: {
+      post,
+    },
+  };
+};

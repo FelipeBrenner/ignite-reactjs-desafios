@@ -14,8 +14,7 @@ import styles from './home.module.scss';
 
 import Header from '../components/Header';
 
-import { format } from 'date-fns';
-import ptBR from 'date-fns/locale/pt-BR';
+import { formatDate } from '../utils';
 
 interface Post {
   uid?: string;
@@ -42,13 +41,7 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
   const formattedPosts = postsPagination.results.map(post => {
     return {
       ...post,
-      first_publication_date: format(
-        new Date(post.first_publication_date),
-        'dd MMM yyyy',
-        {
-          locale: ptBR,
-        }
-      ),
+      first_publication_date: formatDate(post.first_publication_date),
     };
   });
 
@@ -64,13 +57,7 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
     const newFormattedPosts = newPostsPagination.results.map(post => {
       return {
         ...post,
-        first_publication_date: format(
-          new Date(post.first_publication_date),
-          'dd MMM yyyy',
-          {
-            locale: ptBR,
-          }
-        ),
+        first_publication_date: formatDate(post.first_publication_date),
       };
     });
 
@@ -92,7 +79,7 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
               <a>
                 <strong>{post.data.title}</strong>
                 <p>{post.data.subtitle}</p>
-                <div>
+                <div className={commonStyles.info}>
                   <time>
                     <FiCalendar />
                     {post.first_publication_date}
