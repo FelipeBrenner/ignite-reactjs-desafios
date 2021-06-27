@@ -15,3 +15,8 @@
 
 - [Desafio 01 - Criando um hook de carrinho de compras](https://github.com/FelipeBrenner/ignite-reactjs-desafios/tree/main/chapter-II-desafio-01-criando-um-hook-de-carrinho-de-compras)
 - [Desafio 02 - Refactoring de classes e TypeScript](https://github.com/FelipeBrenner/ignite-reactjs-desafios/tree/main/chapter-ll-desafio-02-refactoring-classes-ts)
+
+### Chapter III
+
+- [Desafio 01 - Criando uma aplicação do zero](https://github.com/FelipeBrenner/ignite-reactjs-desafios/tree/main/chapter-III-desafio-01-criando-um-projeto-do-zero)
+- [Desafio 02 - Adicionando features ao blog](https://github.com/FelipeBrenner/ignite-reactjs-desafios/tree/main/chapter-III-desafio-02-adicionando-features-ao-blog)
