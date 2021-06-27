@@ -3,6 +3,8 @@ import Head from 'next/head';
 
 import { FiCalendar, FiUser, FiClock } from 'react-icons/fi';
 
+import Prismic from '@prismicio/client';
+
 import { getPrismicClient } from '../../services/prismic';
 
 import commonStyles from '../../styles/common.module.scss';
@@ -12,11 +14,13 @@ import Header from '../../components/Header';
 import { RichText } from 'prismic-dom';
 
 import { formatDate } from '../../utils';
+import { useRouter } from 'next/router';
 
 interface Post {
   first_publication_date: string | null;
   data: {
     title: string;
+    subtitle: string;
     banner: {
       url: string;
     };
@@ -35,6 +39,28 @@ interface PostProps {
 }
 
 export default function Post({ post }: PostProps) {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <h1>Carregando...</h1>;
+  }
+
+  const totalWords = post.data.content.reduce(
+    (totalContent, currentContent) => {
+      const headingWords = currentContent.heading?.split(' ').length || 0;
+
+      const bodyWords = currentContent.body.reduce((totalBody, currentBody) => {
+        const textWords = currentBody.text.split(' ').length;
+        return totalBody + textWords;
+      }, 0);
+
+      return totalContent + headingWords + bodyWords;
+    },
+    0
+  );
+
+  const timeEstimmed = Math.ceil(totalWords / 200);
+
   return (
     <>
       <Head>
@@ -57,7 +83,8 @@ export default function Post({ post }: PostProps) {
               {post.data.author}
             </span>
             <time>
-              <FiClock />4 min
+              <FiClock />
+              {timeEstimmed} min
             </time>
           </div>
           {post.data.content.map(content => {
@@ -79,11 +106,21 @@ export default function Post({ post }: PostProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // const prismic = getPrismicClient();
-  // const posts = await prismic.query(TODO);
+  const prismic = getPrismicClient();
+  const posts = await prismic.query([
+    Prismic.Predicates.at('document.type', 'posts'),
+  ]);
+
+  const paths = posts.results.map(post => {
+    return {
+      params: {
+        slug: post.uid,
+      },
+    };
+  });
 
   return {
-    paths: [],
+    paths,
     fallback: true,
   };
 };
@@ -98,6 +135,7 @@ export const getStaticProps: GetStaticProps = async context => {
     first_publication_date: response.first_publication_date,
     data: {
       title: response.data.title,
+      subtitle: response.data.subtitle,
       banner: {
         url: response.data.banner.url,
       },
