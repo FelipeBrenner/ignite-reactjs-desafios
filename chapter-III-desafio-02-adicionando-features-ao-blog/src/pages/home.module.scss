@@ -1,0 +1,47 @@
+.posts {
+  a {
+    display: block;
+
+    & + a {
+      margin-top: 3rem;
+    }
+
+    strong {
+      display: block;
+      font-size: 1.75rem;
+      line-height: 2.125rem;
+      color: var(--heading);
+      letter-spacing: -0.5px;
+
+      transition: filter 0.2s;
+    }
+
+    &:hover strong {
+      filter: brightness(0.8);
+    }
+
+    p {
+      font-size: 1.125rem;
+      line-height: 1.375rem;
+      margin-top: 0.5rem;
+      color: var(--body);
+    }
+  }
+
+  button {
+    background: transparent;
+    border: none;
+
+    color: var(--highlight);
+    margin-top: 4rem;
+    font-weight: 600;
+    font-size: 1.125;
+    line-height: 1.375rem;
+
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+}

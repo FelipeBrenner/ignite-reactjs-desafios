@@ -1,0 +1,30 @@
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.info {
+  display: flex;
+
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+  color: var(--info);
+
+  time,
+  span {
+    display: flex;
+    align-items: center;
+    line-height: 1.0625rem;
+
+    svg {
+      height: 20px;
+      width: 20px;
+      margin-right: 8px;
+    }
+  }
+
+  time + span,
+  span + time {
+    margin-left: 1.5rem;
+  }
+}
