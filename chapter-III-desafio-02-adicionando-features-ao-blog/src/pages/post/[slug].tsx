@@ -20,7 +20,9 @@ import React from 'react';
 import Link from 'next/link';
 
 interface Post {
+  uid?: string;
   first_publication_date: string | null;
+  last_publication_date: string | null;
   data: {
     title: string;
     subtitle: string;
@@ -39,10 +41,12 @@ interface Post {
 
 interface PostProps {
   post: Post;
+  prevPost: Post;
+  nextPost: Post;
   preview: boolean;
 }
 
-export default function Post({ post, preview }: PostProps) {
+export default function Post({ post, prevPost, nextPost, preview }: PostProps) {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -64,6 +68,9 @@ export default function Post({ post, preview }: PostProps) {
   );
 
   const timeEstimmed = Math.ceil(totalWords / 200);
+
+  const isPostEdited =
+    post.first_publication_date !== post.last_publication_date;
 
   return (
     <>
@@ -88,9 +95,14 @@ export default function Post({ post, preview }: PostProps) {
             </span>
             <time>
               <FiClock />
-              {timeEstimmed} min
+              {`${timeEstimmed} min`}
             </time>
           </div>
+          {isPostEdited && (
+            <span>
+              {`* editado em ${formatDate(post.last_publication_date, true)}`}
+            </span>
+          )}
           {post.data.content.map(content => {
             return (
               <section key={content.heading} className={styles.postContent}>
@@ -104,6 +116,28 @@ export default function Post({ post, preview }: PostProps) {
             );
           })}
         </article>
+        <section className={styles.navigation}>
+          <div>
+            {prevPost && (
+              <>
+                <h3>{prevPost.data.title}</h3>
+                <Link href={`/post/${prevPost.uid}`}>
+                  <a>Post anterior</a>
+                </Link>
+              </>
+            )}
+          </div>
+          <div>
+            {nextPost && (
+              <>
+                <h3>{nextPost.data.title}</h3>
+                <Link href={`/post/${nextPost.uid}`}>
+                  <a>Próximo post</a>
+                </Link>
+              </>
+            )}
+          </div>
+        </section>
         <Comments />
         {preview && (
           <aside>
@@ -151,6 +185,7 @@ export const getStaticProps: GetStaticProps = async ({
   const post = {
     uid: response.uid,
     first_publication_date: response.first_publication_date,
+    last_publication_date: response.last_publication_date,
     data: {
       title: response.data.title,
       subtitle: response.data.subtitle,
@@ -167,10 +202,31 @@ export const getStaticProps: GetStaticProps = async ({
     },
   };
 
+  const prevPost = await prismic.query(
+    [Prismic.predicates.at('document.type', 'posts')],
+    {
+      pageSize: 1,
+      after: response.id,
+      orderings: '[document.first_publication_date]',
+    }
+  );
+
+  const nextPost = await prismic.query(
+    [Prismic.predicates.at('document.type', 'posts')],
+    {
+      pageSize: 1,
+      after: response.id,
+      orderings: '[document.first_publication_date desc]',
+    }
+  );
+
   return {
     props: {
       post,
+      prevPost: prevPost?.results[0] ?? null,
+      nextPost: nextPost?.results[0] ?? null,
       preview,
     },
+    revalidate: 60 * 60, // 1 hour
   };
 };

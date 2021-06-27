@@ -148,5 +148,6 @@ export const getStaticProps: GetStaticProps = async ({
       postsPagination,
       preview,
     },
+    revalidate: 60 * 60, // 1 hour
   };
 };

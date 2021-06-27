@@ -5,6 +5,16 @@
 }
 
 .post {
+  > span {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    color: var(--info);
+    display: block;
+    margin-top: 1rem;
+  }
+
   h1 {
     font-size: 3rem;
     line-height: 3.625rem;
@@ -36,5 +46,42 @@
         filter: brightness(0.8);
       }
     }
+  }
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  margin: 2.25rem 0 3.75rem;
+  padding-top: 3rem;
+
+  h3 {
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+    letter-spacing: -0.5px;
+    color: var(--heading);
+
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    letter-spacing: -0.5px;
+    color: var(--highlight);
+
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+
+  div + div {
+    text-align: right;
   }
 }
