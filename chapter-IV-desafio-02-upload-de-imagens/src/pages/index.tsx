@@ -32,7 +32,7 @@ export default function Home(): JSX.Element {
   } = useInfiniteQuery(
     'images',
     // TODO AXIOS REQUEST WITH PARAM
-    async (pageParam = null): Promise<GetImagesResponse> => {
+    async ({ pageParam = null }): Promise<GetImagesResponse> => {
       const response = await api.get('/api/images', {
         params: {
           after: pageParam,
