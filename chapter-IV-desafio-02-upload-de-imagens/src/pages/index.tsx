@@ -8,6 +8,19 @@ import { api } from '../services/api';
 import { Loading } from '../components/Loading';
 import { Error } from '../components/Error';
 
+interface Image {
+  title: string;
+  description: string;
+  url: string;
+  ts: number;
+  id: string;
+}
+
+type GetImagesResponse = {
+  after: string;
+  data: Image[];
+};
+
 export default function Home(): JSX.Element {
   const {
     data,
@@ -19,7 +32,7 @@ export default function Home(): JSX.Element {
   } = useInfiniteQuery(
     'images',
     // TODO AXIOS REQUEST WITH PARAM
-    async (pageParam = null) => {
+    async (pageParam = null): Promise<GetImagesResponse> => {
       const response = await api.get('/api/images', {
         params: {
           after: pageParam,
@@ -36,7 +49,7 @@ export default function Home(): JSX.Element {
 
   const formattedData = useMemo(() => {
     // TODO FORMAT AND FLAT DATA ARRAY
-    return data.pages.flatMap(image => image);
+    return data?.pages.flatMap(pageData => pageData.data.flat());
   }, [data]);
 
   // TODO RENDER LOADING SCREEN
@@ -51,7 +64,14 @@ export default function Home(): JSX.Element {
 
       <Box maxW={1120} px={20} mx="auto" my={20}>
         <CardList cards={formattedData} />
-        {/* TODO RENDER LOAD MORE BUTTON IF DATA HAS NEXT PAGE */}
+        {
+          /* TODO RENDER LOAD MORE BUTTON IF DATA HAS NEXT PAGE */
+          hasNextPage && (
+            <Button onClick={() => fetchNextPage()}>
+              {isFetchingNextPage ? 'Carregando...' : 'Carregar mais'}
+            </Button>
+          )
+        }
       </Box>
     </>
   );
