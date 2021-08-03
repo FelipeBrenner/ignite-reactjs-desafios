@@ -16,14 +16,19 @@ export function FormAddImage({ closeModal }: FormAddImageProps): JSX.Element {
   const [localImageUrl, setLocalImageUrl] = useState('');
   const toast = useToast();
 
+  const acceptedFormatsRegex = /[/.](gif|jpg|jpeg|tiff|png)$/i;
+
   const formValidations = {
     image: {
       // TODO REQUIRED, LESS THAN 10 MB AND ACCEPTED FORMATS VALIDATIONS
       required: 'Arquivo obrigatório',
-      // validate: {
-      //   lessThan10MB: || 'O arquivo deve ser menor que 10MB',
-      //   acceptedFormats: || 'Somente são aceitos arquivos PNG, JPEG e GIF'
-      // },
+      validate: {
+        lessThan10MB: fileList =>
+          fileList[0].size < 10000000 || 'O arquivo deve ser menor que 10MB',
+        acceptedFormats: fileList =>
+          acceptedFormatsRegex.test(fileList[0].type) ||
+          'Somente são aceitos arquivos PNG, JPEG e GIF',
+      },
     },
     title: {
       // TODO REQUIRED, MIN AND MAX LENGTH VALIDATIONS
@@ -51,9 +56,10 @@ export function FormAddImage({ closeModal }: FormAddImageProps): JSX.Element {
   const mutation = useMutation(
     // TODO MUTATION API POST REQUEST,
     async (data: Record<string, unknown>) => {
-      const response = await api.post('api/images', data);
-
-      return response.data;
+      await api.post('api/images', {
+        ...data,
+        url: imageUrl,
+      });
     },
     {
       // TODO ONSUCCESS MUTATION
@@ -99,7 +105,7 @@ export function FormAddImage({ closeModal }: FormAddImageProps): JSX.Element {
       });
     } finally {
       // TODO CLEAN FORM, STATES AND CLOSE MODAL
-      reset(data);
+      reset();
       setImageUrl('');
       setLocalImageUrl('');
       closeModal();
