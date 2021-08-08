@@ -24,3 +24,7 @@
 ### Chapter IV
 
 - [Desafio 02 - Upload de imagens](https://github.com/FelipeBrenner/ignite-reactjs-desafios/tree/main/chapter-IV-desafio-02-upload-de-imagens)
+
+### Chapter V
+
+- [Desafio 01 - Otimizando a aplicação](https://github.com/FelipeBrenner/ignite-reactjs-desafios/tree/main/chapter-V-desafio-01-otimizando-a-aplicacao)
