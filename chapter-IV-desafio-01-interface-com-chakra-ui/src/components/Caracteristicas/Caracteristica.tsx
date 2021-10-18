@@ -5,7 +5,7 @@ interface CaracteristicaProps {
   text: string;
 }
 
-export default function Caracteristica({ icon, text }: CaracteristicaProps) {
+export function Caracteristica({ icon, text }: CaracteristicaProps) {
   const isMobile = useBreakpointValue({
     base: false,
     sm: true,
@@ -14,7 +14,7 @@ export default function Caracteristica({ icon, text }: CaracteristicaProps) {
   return (
     <Flex direction={["row", "column"]} align="center" justify="center">
       {isMobile ? (
-        <Image src={`/icons/${icon}.svg`} w="85px" h="85px" mb="6" />
+        <Image src={`/icons/${icon}.svg`} w="85px" h="85px" mb="6" alt={text} />
       ) : (
         <Text color="yellow.400" fontSize="4xl" mr="2">
           •

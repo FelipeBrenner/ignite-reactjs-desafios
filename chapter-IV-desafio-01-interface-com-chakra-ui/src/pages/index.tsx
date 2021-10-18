@@ -1,13 +1,13 @@
 import { Flex, Heading } from "@chakra-ui/react";
 import { GetStaticProps } from "next";
-// import Prismic from "@prismicio/client";
+import Prismic from "@prismicio/client";
 import Head from "next/head";
 import { Banner } from "../components/Banner";
-// import Caracteristicas from "../components/Caracteristicas";
+import { Caracteristicas } from "../components/Caracteristicas";
 import { Header } from "../components/Header";
-// import Separador from "../components/Separador";
-// import Slider from "../components/Slider";
-// import { getPrismicClient } from "../services/prismic";
+import { Separador } from "../components/Separador";
+import { Slider } from "../components/Slider";
+import { getPrismicClient } from "../services/prismic";
 
 interface HomeProps {
   continents: {
@@ -33,8 +33,8 @@ export default function Home({ continents }: HomeProps) {
 
       <Header />
       <Banner />
-      {/* <Caracteristicas />
-      <Separador /> */}
+      <Caracteristicas />
+      <Separador />
 
       <Heading
         textAlign="center"
@@ -47,30 +47,30 @@ export default function Home({ continents }: HomeProps) {
         Então escolha seu continente
       </Heading>
 
-      {/* <Slider continents={continents} /> */}
+      <Slider continents={continents} />
     </Flex>
   );
 }
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   const prismic = getPrismicClient();
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient();
 
-//   const response = await prismic.query([
-//     Prismic.Predicates.at("document.type", "continent"),
-//   ]);
+  const response = await prismic.query([
+    Prismic.Predicates.at("document.type", "c"),
+  ]);
 
-//   const continents = response.results.map((continent) => {
-//     return {
-//       slug: continent.uid,
-//       title: continent.data.title,
-//       summary: continent.data.summary,
-//       image: continent.data.slider_image.url,
-//     };
-//   });
+  const continents = response.results.map((continent) => {
+    return {
+      slug: continent.uid,
+      title: continent.data.title,
+      summary: continent.data.summary,
+      image: continent.data.slider_image.url,
+    };
+  });
 
-//   return {
-//     props: {
-//       continents,
-//     },
-//   };
-// };
+  return {
+    props: {
+      continents,
+    },
+  };
+};

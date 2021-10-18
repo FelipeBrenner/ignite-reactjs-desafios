@@ -1,5 +1,5 @@
 import { Flex, Grid, GridItem } from "@chakra-ui/layout";
-import Caracteristica from "./Caracteristica";
+import { Caracteristica } from "./Caracteristica";
 
 const caracteristicas = [
   { icon: "cocktail", text: "vida noturna" },
@@ -8,7 +8,7 @@ const caracteristicas = [
   { icon: "museum", text: "clássico" },
 ];
 
-export default function Caracteristicas() {
+export function Caracteristicas() {
   return (
     <Grid
       templateColumns={["1fr 1fr", "1fr 1fr", "1fr 1fr", "repeat(5, 1fr)"]}
@@ -21,14 +21,14 @@ export default function Caracteristicas() {
       flexWrap="wrap"
       gap={[1, 5]}
     >
-      {caracteristicas.map((caracteristica) => {
-        <GridItem id="icon">
+      {caracteristicas.map((caracteristica) => (
+        <GridItem key="icon">
           <Caracteristica
             icon={caracteristica.icon}
             text={caracteristica.text}
           />
-        </GridItem>;
-      })}
+        </GridItem>
+      ))}
 
       <GridItem colSpan={[2, 2, 2, 1]}>
         <Caracteristica icon="earth" text="e mais..." />
