@@ -23,6 +23,7 @@
 
 ### Chapter IV
 
+- [Desafio 01 - Interface com Chakra UI](https://github.com/FelipeBrenner/ignite-reactjs-desafios/tree/main/chapter-IV-desafio-01-interface-com-chakra-ui)
 - [Desafio 02 - Upload de imagens](https://github.com/FelipeBrenner/ignite-reactjs-desafios/tree/main/chapter-IV-desafio-02-upload-de-imagens)
 
 ### Chapter V
