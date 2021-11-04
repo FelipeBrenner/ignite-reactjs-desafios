@@ -50,7 +50,7 @@ Vamos nessa?
 
 Como você já deve ter visto nas aulas, o Prismic é uma Headless CMS. Vamos utilizá-lo para gerar documentos repetíveis (post) que vão retornar alguns dados para a aplicação. Nesse ponto, é muito importante que você siga **exatamente** a estrutura que vai ser apresentada aqui pois os testes **dependem** disso.
 
-Vou deixar este [video](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/af40056a-bfff-4075-b796-643c2353e399/prismic.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210627%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210627T154256Z&X-Amz-Expires=86400&X-Amz-Signature=77c8dc3246529818c62b649d38e7b187811319229587d77a1e8ab0346bdad687&X-Amz-SignedHeaders=host) mostrando a estrutura do Documento e um exemplo de Publicação para você se familiarizar. Em seguida, discutiremos campo a campo.
+Vou deixar este [video](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/af40056a-bfff-4075-b796-643c2353e399/prismic.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211104%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211104T133853Z&X-Amz-Expires=86400&X-Amz-Signature=10cc14ff2b72347360e2325a0b317cb875db138200aa5b5b66efeaa3dc76aa14&X-Amz-SignedHeaders=host) mostrando a estrutura do Documento e um exemplo de Publicação para você se familiarizar. Em seguida, discutiremos campo a campo.
 
 No vídeo apresentado, foi possível ver que nosso documento repetível `posts` tem 8 campos. Vamos descrever cada um deles:
 
@@ -160,7 +160,7 @@ Agora para duplicar os layouts, basta você clicar no link abaixo. Ele adicionar
 
 Para verificar a estilização de um elemento, basta selecioná-lo e escolhar na barra lateral direito a opção `Inspect` no menu superior direito. Dessa forma você vai ter a maioria das informações que precisa. Caso precise das distâncias em relação a outros elementos, basta colocar o mouse em cima do elemento que deseja pegar a distância.
 
-[Video](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1e292b38-d5a7-4fb2-b3f2-d194d4401662/figma.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210627%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210627T154257Z&X-Amz-Expires=86400&X-Amz-Signature=8f153d0502ff19e8c09159ae2033d078f7fa9dcae793b2125802f01362d2ba2f&X-Amz-SignedHeaders=host)
+[Video](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1e292b38-d5a7-4fb2-b3f2-d194d4401662/figma.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211104%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211104T133853Z&X-Amz-Expires=86400&X-Amz-Signature=404a589d09968d2256a7005fdcfccce04d24329d4ae012d98fb81c90d8a104a0&X-Amz-SignedHeaders=host)
 
 ### Exportando do Figma
 
@@ -170,7 +170,7 @@ Se você está tendo dificuldades em encontrar o comando `Export` no layout do F
 - Na sidebar direita, clique na aba `Design`;
 - Deslize até o final da sidebar para encontrar a opção `Export`.
 
-[Video](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a3f1b967-3a93-4e83-8abb-d3d22ae5da75/figma2.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210627%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210627T154257Z&X-Amz-Expires=86400&X-Amz-Signature=2b6e2d84d74fee643f271bfbe75a9275d0c22a418615a19b1c3f26a22651a6a5&X-Amz-SignedHeaders=host)
+[Video](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a3f1b967-3a93-4e83-8abb-d3d22ae5da75/figma2.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211104%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211104T133853Z&X-Amz-Expires=86400&X-Amz-Signature=a22dbb814594942d683ac3cf89efb23cc124095ac4c8c7dbd49ad8283a71fb88&X-Amz-SignedHeaders=host)
 
 ## fetch
 
@@ -318,3 +318,5 @@ Esse desafio deve ser entregue a partir da plataforma da Rocketseat. Envie o lin
 <h1 align="center">
   <img alt="test" title="test" src=".github/test.png">
 </h1>
+
+## 📖 [Notion](https://www.notion.so/Desafio-01-Criando-um-projeto-do-zero-b1a3645d286b4eec93f5f1f5476d0ff7)

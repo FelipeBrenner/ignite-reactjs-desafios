@@ -361,7 +361,7 @@ Para esse desafio, temos os seguintes testes:
 
 # Como deve ficar a aplicação ao final?
 
-Está com dúvidas (ou curioso 👀) para ver como deve ficar a aplicação ao final do desafio? Deixamos este [vídeo](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c5c6afb6-a6eb-4ed5-b4e5-d17d7557652b/resultadoFinal.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210803%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210803T221013Z&X-Amz-Expires=86400&X-Amz-Signature=2017af25e19512ae090c50a4a98aa74cb146d679f51b40208372e41d5571ab6b&X-Amz-SignedHeaders=host) mostrando as principais funcionalidades que você deve implementar para te ajudar (ou matar sua curiosidade 👀).
+Está com dúvidas (ou curioso 👀) para ver como deve ficar a aplicação ao final do desafio? Deixamos este [vídeo](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c5c6afb6-a6eb-4ed5-b4e5-d17d7557652b/resultadoFinal.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211104%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211104T133026Z&X-Amz-Expires=86400&X-Amz-Signature=c2004f02f0181567c1be8ee94c01351a33e49cc6d43811ebb3113024261e92c2&X-Amz-SignedHeaders=host) mostrando as principais funcionalidades que você deve implementar para te ajudar (ou matar sua curiosidade 👀).
 
 # 📅 Entrega
 
@@ -370,3 +370,5 @@ Esse desafio deve ser entregue a partir da plataforma da Rocketseat. Envie o lin
 <h1 align="center">
   <img alt="test" title="test" src=".github/test.png">
 </h1>
+
+## 📖 [Notion](https://www.notion.so/Desafio-02-Upload-de-imagens-4cf1c3b1c1ad4a66961b6e48558cc3b8)

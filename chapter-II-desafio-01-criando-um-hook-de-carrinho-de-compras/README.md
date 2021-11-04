@@ -38,7 +38,7 @@ Para esse desafio, além dos conceitos vistos em aula utilizaremos algumas coisa
 
 ### Fake API com JSON Server
 
-Assim como utilizamos o MirageJS no módulo 2 para simular uma API com os dados das transações da aplicação dt.money, vamos utilizar o JSON Server para simular uma API que possui as informações dos produtos e do estoque. 
+Assim como utilizamos o MirageJS no módulo 2 para simular uma API com os dados das transações da aplicação dt.money, vamos utilizar o JSON Server para simular uma API que possui as informações dos produtos e do estoque.
 
 Navegue até a pasta criada, abra no Visual Studio Code e execute os seguintes comandos no terminal:
 
@@ -65,9 +65,9 @@ Dessa forma, basta consumir essas rotas da API normalmente com o axios. Caso que
 
 Para preservar os dados do carrinho mesmo se fecharmos a aplicação, utilizaremos a **localStorage API**
 
-Essa é uma API que nos permite persistir dados no navegador em um esquema de chave-valor (semelhante ao que temos com objetos JSON). Como essa é uma API global, você não precisa importar nada antes de usar. 
+Essa é uma API que nos permite persistir dados no navegador em um esquema de chave-valor (semelhante ao que temos com objetos JSON). Como essa é uma API global, você não precisa importar nada antes de usar.
 
-Para salvar os dados, você deve utilizar o método `setItem`. Como primeiro argumento você deve informar o nome que você quer dar para o registro, no caso desse desafio é `obrigatório` utilizar o nome `@RocketShoes:cart`. Já o segundo argumento é o valor do registro que **obrigatoriamente** precisa estar no formato `string`.  Abaixo segue um exemplo:
+Para salvar os dados, você deve utilizar o método `setItem`. Como primeiro argumento você deve informar o nome que você quer dar para o registro, no caso desse desafio é `obrigatório` utilizar o nome `@RocketShoes:cart`. Já o segundo argumento é o valor do registro que **obrigatoriamente** precisa estar no formato `string`. Abaixo segue um exemplo:
 
 ```bash
 localStorage.setItem('@RocketShoes:cart', cart)
@@ -78,7 +78,7 @@ Caso queira enviar um valor para o registro que não esteja no formato `string`,
 Para recuperar os dados, você deve utilizar o método `getItem` passando como argumento do registro que, no caso desse desafio, é `obrigatório` utilizar como `@RocketShoes:cart`. Abaixo segue um exemplo:
 
 ```jsx
-const storagedCart = localStorage.getItem('@RocketShoes:cart');
+const storagedCart = localStorage.getItem("@RocketShoes:cart");
 ```
 
 O valor retornado pelo método `getItem` é sempre no formato `string`. Caso você queira utilizar esse dado em outro formato, é preciso tratá-los (ex.: `JSON.parse`). Isso irá converter a informação ao estado original de quando foi salva com o `JSON.strigify`, seja uma lista, um objeto ou outro tipo de dado.
@@ -159,42 +159,45 @@ Então é aqui que você vai implementar as funcionalidades que serão utilizada
 
 - **cart:** Deve verificar se existe algum registro com o valor `@RocketShoes:cart` e retornar esse valor caso existir. Caso contrário, retornar um array vazio.
 - **addProduct:** Deve adicionar um produto ao carrinho. Porém, é preciso verificar algumas coisas:
-    - O valor atualizado do carrinho deve ser perpetuado no **localStorage** utilizando o método `setItem`.
-    - Caso o produto já exista no carrinho, não se deve adicionar um novo produto repetido, apenas incrementar em 1 unidade a quantidade;
-    - Verificar se existe no estoque a quantidade desejada do produto. Caso contrário, utilizar o método `error` da **react-toastify** com a seguinte mensagem:
 
-    ```jsx
-    toast.error('Quantidade solicitada fora de estoque');
-    ```
+  - O valor atualizado do carrinho deve ser perpetuado no **localStorage** utilizando o método `setItem`.
+  - Caso o produto já exista no carrinho, não se deve adicionar um novo produto repetido, apenas incrementar em 1 unidade a quantidade;
+  - Verificar se existe no estoque a quantidade desejada do produto. Caso contrário, utilizar o método `error` da **react-toastify** com a seguinte mensagem:
 
-    - Capturar utilizando `trycatch` os erros que ocorrerem ao longo do método e, no catch, utilizar o método `error` da **react-toastify** com a seguinte mensagem:
+  ```jsx
+  toast.error("Quantidade solicitada fora de estoque");
+  ```
 
-    ```jsx
-    toast.error('Erro na adição do produto');
-    ```
+  - Capturar utilizando `trycatch` os erros que ocorrerem ao longo do método e, no catch, utilizar o método `error` da **react-toastify** com a seguinte mensagem:
+
+  ```jsx
+  toast.error("Erro na adição do produto");
+  ```
 
 - **removeProduct:** Deve remover um produto do carrinho. Porém, é preciso verificar algumas coisas:
-    - O valor atualizado do carrinho deve ser perpetuado no **localStorage** utilizando o método `setItem`.
-    - Capturar utilizando `trycatch` os erros que ocorrerem ao longo do método e, no catch, utilizar o método `error` da **react-toastify** com a seguinte mensagem:
 
-    ```jsx
-    toast.error('Erro na remoção do produto');
-    ```
+  - O valor atualizado do carrinho deve ser perpetuado no **localStorage** utilizando o método `setItem`.
+  - Capturar utilizando `trycatch` os erros que ocorrerem ao longo do método e, no catch, utilizar o método `error` da **react-toastify** com a seguinte mensagem:
+
+  ```jsx
+  toast.error("Erro na remoção do produto");
+  ```
 
 - **updateProductAmount:** Deve atualizar a quantidade de um produto no carrinho. Porém, é preciso verificar algumas coisas:
-    - O valor atualizado do carrinho deve ser perpetuado no **localStorage** utilizando o método `setItem`.
-    - Se a quantidade do produto for menor ou igual a zero, sair da função **updateProductAmount** instantaneamente.
-    - Verificar se existe no estoque a quantidade desejada do produto. Caso contrário, utilizar o método `error` da **react-toastify** com a seguinte mensagem:
 
-    ```jsx
-    toast.error('Quantidade solicitada fora de estoque');
-    ```
+  - O valor atualizado do carrinho deve ser perpetuado no **localStorage** utilizando o método `setItem`.
+  - Se a quantidade do produto for menor ou igual a zero, sair da função **updateProductAmount** instantaneamente.
+  - Verificar se existe no estoque a quantidade desejada do produto. Caso contrário, utilizar o método `error` da **react-toastify** com a seguinte mensagem:
 
-    - Capturar utilizando `trycatch` os erros que ocorrerem ao longo do método e, no catch, utilizar o método `error` da **react-toastify** com a seguinte mensagem:
+  ```jsx
+  toast.error("Quantidade solicitada fora de estoque");
+  ```
 
-    ```jsx
-    toast.error('Erro na alteração de quantidade do produto');
-    ```
+  - Capturar utilizando `trycatch` os erros que ocorrerem ao longo do método e, no catch, utilizar o método `error` da **react-toastify** com a seguinte mensagem:
+
+  ```jsx
+  toast.error("Erro na alteração de quantidade do produto");
+  ```
 
 ## Especificação dos testes
 
@@ -214,7 +217,7 @@ Para esse desafio, temos os seguintes testes:
 
 ## Como deve ficar a aplicação ao final?
 
-Está com dúvidas (ou curioso 👀) para ver como deve ficar a aplicação ao final do desafio? Deixamos este [video](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f166455c-a42f-4d25-8baa-a6686a3cb476/challenge.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210324%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210324T235119Z&X-Amz-Expires=86400&X-Amz-Signature=2ebaa8fbcef1206d898bc699ac308d8c7076cbd2d0c0b06e7cccd80c7743a3e5&X-Amz-SignedHeaders=host) mostrando as principais funcionalidades que você deve implementar para te ajudar (ou matar sua curiosidade 👀).
+Está com dúvidas (ou curioso 👀) para ver como deve ficar a aplicação ao final do desafio? Deixamos este [video](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f166455c-a42f-4d25-8baa-a6686a3cb476/challenge.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211104%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211104T134114Z&X-Amz-Expires=86400&X-Amz-Signature=991bf1791e197ea1d6416473340ea1cb51016a62058be3f5c118683f03ed76e7&X-Amz-SignedHeaders=host) mostrando as principais funcionalidades que você deve implementar para te ajudar (ou matar sua curiosidade 👀).
 
 # 📅 Entrega
 
@@ -223,3 +226,5 @@ Esse desafio deve ser entregue a partir da plataforma da Rocketseat. Envie o lin
 <h1 align="center">
   <img alt="test" title="test" src=".github/test.png">
 </h1>
+
+## 📖 [Notion](https://www.notion.so/Desafio-01-Criando-um-hook-de-carrinho-de-compras-5769216778794019a83f544e79167b12)

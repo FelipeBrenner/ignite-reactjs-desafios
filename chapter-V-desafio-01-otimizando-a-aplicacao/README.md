@@ -97,8 +97,10 @@ Mesmo que a aplicação não precise de alguns pontos de otimização, sinta-se 
 
 ## Como deve ficar a aplicação ao final?
 
-Está com dúvidas (ou curioso 👀) para ver como deve ficar a aplicação ao final do desafio? Deixamos este [vídeo](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/10783a0f-e3a7-4991-8bb5-43f73508431f/demo.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210809%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210809T002247Z&X-Amz-Expires=86400&X-Amz-Signature=42b9075d324cd6461e2ff57501276b261f7e3b58ff5d4543b2ad7169a1438b28&X-Amz-SignedHeaders=host) mostrando as principais funcionalidades que você deve implementar para te ajudar (ou matar sua curiosidade 👀).
+Está com dúvidas (ou curioso 👀) para ver como deve ficar a aplicação ao final do desafio? Deixamos este [vídeo](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/10783a0f-e3a7-4991-8bb5-43f73508431f/demo.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211104%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211104T133248Z&X-Amz-Expires=86400&X-Amz-Signature=01965c6033378cadf2dcd05a61e9d531198fc0b66ddbdac190fc0086350ce946&X-Amz-SignedHeaders=host) mostrando as principais funcionalidades que você deve implementar para te ajudar (ou matar sua curiosidade 👀).
 
 # 📅 Entrega
 
 Esse desafio deve ser entregue a partir da plataforma da Rocketseat. Envie o link do repositório que você fez suas alterações. Após concluir o desafio, além de ter mandado o código para o GitHub, fazer um post no LinkedIn é uma boa forma de demonstrar seus conhecimentos e esforços para evoluir na sua carreira para oportunidades futuras.
+
+## 📖 [Notion](https://www.notion.so/Desafio-01-Otimizando-a-aplica-o-2942004b422d455891756300d88d0b9a)

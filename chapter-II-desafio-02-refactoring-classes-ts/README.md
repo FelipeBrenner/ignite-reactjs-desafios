@@ -26,7 +26,7 @@ Para esse desafio, além dos conceitos vistos em aula utilizaremos o JSON server
 
 ### Fake API com JSON Server
 
-Assim como utilizamos o MirageJS no módulo 2 para simular uma API com os dados das transações da aplicação dt.money, vamos utilizar o JSON Server para simular uma API que possui as informações das comidas. 
+Assim como utilizamos o MirageJS no módulo 2 para simular uma API com os dados das transações da aplicação dt.money, vamos utilizar o JSON Server para simular uma API que possui as informações das comidas.
 
 Navegue até a pasta criada, abra no Visual Studio Code e execute os seguintes comandos no terminal:
 
@@ -96,7 +96,7 @@ Caso você tenha dificuldade nesse processo de migração, dê uma olhada no nos
 
 ## Como deve ficar a aplicação ao final?
 
-Nesse desafio você já recebe a aplicação totalmente funcional, então todos os recursos mostrados neste [video](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d7d94fcf-b6af-40eb-a215-731ac274e475/Peek_2021-03-10_10-43.mp4) já estão implementados no template e devem permanecer funcionado após suas alterações.
+Nesse desafio você já recebe a aplicação totalmente funcional, então todos os recursos mostrados neste [video](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d7d94fcf-b6af-40eb-a215-731ac274e475/Peek_2021-03-10_10-43.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211104%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211104T134042Z&X-Amz-Expires=86400&X-Amz-Signature=fd19c9950b8e28d312d3cc2e05e4188d379ecb69b86a8525fef5305776c952c7&X-Amz-SignedHeaders=host) já estão implementados no template e devem permanecer funcionado após suas alterações.
 
 # 📅 Entrega
 
@@ -115,3 +115,5 @@ Esse desafio deve ser entregue a partir da plataforma da Rocketseat. Envie o lin
   - `yarn add @types/styled-components -D`
   - `yarn add @types/react-modal -D`
 - Refatorado arquivos, alterando de `.js` e `.jsx` para `.ts` e `.tsx`, passando a utilizar useState() no lugar de this.state da extenção Component do React, useEffect(), function ao invés de class, declarando as tipagens nos index e styles com Props, etc.
+
+## 📖 [Notion](https://www.notion.so/Desafio-02-Refactoring-de-classes-e-typescript-4571541e7f8c4799bd191b6cfb53802c)

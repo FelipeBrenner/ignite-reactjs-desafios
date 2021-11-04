@@ -50,7 +50,7 @@ Agora para duplicar os layouts, basta você clicar no link abaixo. Ele adicionar
 
 Para verificar a estilização de um elemento, basta selecioná-lo e escolhar na barra lateral direita a opção `Inspect` no menu superior direito. Dessa forma você vai ter a maioria das informações que precisa. Caso precise das distâncias em relação a outros elementos, basta colocar o mouse em cima do elemento que deseja pegar a distância.
 
-[Video](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1e292b38-d5a7-4fb2-b3f2-d194d4401662/figma.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211018T001051Z&X-Amz-Expires=86400&X-Amz-Signature=a3fafec2927b9c2ef6f54963db5d7bec572bafb9095263cc7196ffb40d3cbd50&X-Amz-SignedHeaders=host)
+[Video](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1e292b38-d5a7-4fb2-b3f2-d194d4401662/figma.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211104%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211104T133611Z&X-Amz-Expires=86400&X-Amz-Signature=6354f7968c7669d15210a2000f254ee28da39e611a7f3e496ee74cff689211e1&X-Amz-SignedHeaders=host)
 
 ### Exportando do Figma
 
@@ -60,7 +60,7 @@ Se você está tendo dificuldades em encontrar o comando `Export` no layout do F
 - Na sidebar direita, clique na aba `Design`;
 - Deslize até o final da sidebar para encontrar a opção `Export`.
 
-[Video](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a3f1b967-3a93-4e83-8abb-d3d22ae5da75/figma2.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211018T001051Z&X-Amz-Expires=86400&X-Amz-Signature=b885a8e554a21359e03dd6cfcd9a19d081c17007910e65e2b1ca1e2b07294e16&X-Amz-SignedHeaders=host)
+[Video](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a3f1b967-3a93-4e83-8abb-d3d22ae5da75/figma2.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211104%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211104T133612Z&X-Amz-Expires=86400&X-Amz-Signature=d42dc7eb982a9f0530e04ce1a9eb1b8f17595ffb651bdd3137a144ea5301ae12&X-Amz-SignedHeaders=host)
 
 ## Unsplash
 
@@ -155,3 +155,5 @@ Por fim, os dados da aplicação (continentes e países) serão criados por voc�
 Esse desafio deve ser entregue a partir da plataforma da Rocketseat. Envie o link do repositório que você fez suas alterações. Após concluir o desafio, além de ter mandado o código para o GitHub, fazer um post no LinkedIn é uma boa forma de demonstrar seus conhecimentos e esforços para evoluir na sua carreira para oportunidades futuras.
 
 Feito com 💜 por Rocketseat 👋 Participe da nossa [comunidade aberta!](https://discord.gg/pUU3CG4Z)
+
+## 📖 [Notion](https://www.notion.so/Desafio-01-Interface-com-Chakra-UI-d1274f7fd7f54283b9173b7fd8003cc6)
